@@ -40,10 +40,3 @@ RSpec.describe BikeClub do
   end
 
 end
-
-
-Additionally, use TDD to add the following functionality to the BikeClub class. A passing challenge will complete at least one of the following. We recommend completing more than one if you have time.
-
-A BikeClub can tell us which Biker has logged the most rides.
-A BikeClub can tell us which Biker has the best time for a given Ride.
-A BikeClub can tell us which Bikers are eligible for a given Ride. A Biker is eligible for a Ride if the terrain is acceptable to them and the total distance does not exceed their max distance.
