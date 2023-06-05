@@ -11,9 +11,7 @@ class BikeClub
   end
 
   def most_rides
-    
-    @bikers.each do |biker|
-
+    @bikers.max_by { |biker| biker.number_of_rides }
     end
   end
 end
