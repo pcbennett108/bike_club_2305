@@ -29,6 +29,8 @@ RSpec.describe Biker do
   
   it "can keep a record of rides and their times" do
     expect(@biker.rides).to eq({})
+    @biker.learn_terrain!(:gravel)
+    @biker.learn_terrain!(:hills)
     @biker.log_ride(@ride1, 92.5)
     @biker.log_ride(@ride1, 91.1)
     @biker.log_ride(@ride2, 60.9)
@@ -37,8 +39,14 @@ RSpec.describe Biker do
   end
   
   it "can determin a personal record for each ride" do
-    expect(@biker.personal_record(ride1)).to eq(91.1)
-    expect(@biker.personal_record(ride2)).to eq(60.9)
+    @biker.learn_terrain!(:gravel)
+    @biker.learn_terrain!(:hills)
+    @biker.log_ride(@ride1, 92.5)
+    @biker.log_ride(@ride1, 91.1)
+    @biker.log_ride(@ride2, 60.9)
+    @biker.log_ride(@ride2, 61.6)
+    expect(@biker.personal_record(@ride1)).to eq(91.1)
+    expect(@biker.personal_record(@ride2)).to eq(60.9)
   end
   
   it "can only ride on learned terrain" do
@@ -57,7 +65,7 @@ RSpec.describe Biker do
     expect(@biker2.rides).to eq({@ride2 => [65.0]})
   end
 
-  it "can only log rides within max_distance" do
+  it "can only determin a personal record for qualifing rides" do
     @biker2.learn_terrain!(:gravel)
     @biker2.log_ride(@ride1, 95.0)
     @biker2.log_ride(@ride2, 65.2)
