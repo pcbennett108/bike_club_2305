@@ -15,6 +15,10 @@ RSpec.describe Ride do
     expect(@ride1.distance).to eq(10.7)
     expect(@ride1.terrain).to eq(:hills)
   end
+
+  it "can check if the route is a loop" do
+
+  end
   
   it "can calculate distance based on route type" do
     expect(@ride1.loop?).to be false
