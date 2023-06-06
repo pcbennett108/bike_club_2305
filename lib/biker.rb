@@ -39,6 +39,12 @@ class Biker
     end
   end
 
+  # def personal_record(ride)
+  #   return false if !@rides.has_key?(ride)
+  #   @rides [ride].min
+  #   end
+  # end
+
   def acceptable_terrain?(ride)
     @acceptable_terrain.include?(ride.terrain)
   end

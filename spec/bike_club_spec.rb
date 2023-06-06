@@ -1,3 +1,7 @@
+require './lib/ride'
+require './lib/biker'
+require './lib/bike_club'
+
 RSpec.describe BikeClub do 
   before(:each) do
     @club1 = BikeClub.new("Mountain Riders")
@@ -40,3 +44,16 @@ RSpec.describe BikeClub do
   end
 
 end
+
+# could test a rider with no rides for edge case
+
+#for testing log_time group ride
+# expected_return = {
+#   start_time: starting_time,
+#   bikers: [fast_biker, @good_biker)
+#   }
+#   expect@bike_club.record_group_ride(@ride_1)).t
+#   fast_end_time = Time. now - 600
+#   @bike_club.end_group_ride(@ride_1, @fast_biker,
+#   expect (@fast_biker.rides [eride_11).to eq| (50))
+#   end
